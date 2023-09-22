@@ -128,11 +128,15 @@ const deals = [
 // Is there a simpler way to access that?
 
 
-for(const {title} of deals) {
-    if(title === '15% Off!') {
-        console.log(title.replace('15', '10'))
-    }
-}
+// for(const {title} of deals) {
+//     if(title === '15% Off!') {
+//         console.log(title.replace('15', '10'))
+//     }
+// }
+
+let aVariable = deals[0].title.replace('15','10')
+
+console.log(aVariable)
 
 
 /*
@@ -149,9 +153,6 @@ for(const {title} of deals) {
 */
 
 //CODE HERE
-for(const {desc} of deals) {
-    if(desc === '   This deal lasts until the end of March! ') {
-        console.log(desc.replace('March', 'April').trim())
-    }
-}
+let anotherVariable = deals[1].desc.replace('March','April').trim()
 
+console.log(anotherVariable)
