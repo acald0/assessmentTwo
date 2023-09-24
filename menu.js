@@ -31,6 +31,14 @@
 */
 
 //CODE HERE
+let pizza = {
+    name: 'Margharita',
+    price: 12,
+    category: 'entree',
+    popularity: 4.5,
+    rating: 4.3,
+    tags:['vegetarian', 'organic ingredients']
+}
 
 
 
@@ -43,7 +51,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +61,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,7 +71,9 @@
 */
 
 //CODE HERE
+let newPrice = pizza.price = 10
 
+console.log(newPrice)
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +83,9 @@
 */
 
 //CODE HERE
+let pizzaCat = pizza.category
 
+console.log(pizzaCat)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +100,48 @@
 */
 
 //CODE HERE
-
+let foodArr = [
+    {
+        name: 'Caeser Salad',
+        price: 8,
+        category: 'side',
+        popularity: 4.8,
+        rating: 5,
+        tags:['vegetarian', 'organic ingredients']
+    },
+    {
+        name: 'Breadsticks',
+        price: 4,
+        category: 'side',
+        popularity: 4.6,
+        rating: 4.8,
+        tags:['contains gluten', 'shareable']
+    },
+    {
+        name: 'Alfredo pasta',
+        price: 10,
+        category: 'entree',
+        popularity: 4.9,
+        rating: 4.6,
+        tags:['vegetarian', 'contains gluten']
+    },
+    {
+        name: 'Steak',
+        price: 20,
+        category: 'entree',
+        popularity: 4.3,
+        rating: 4,
+        tags:['meatlover', 'gluten-free']
+    },
+    {
+        name: 'Lobster',
+        price: 18,
+        category: 'entree',
+        popularity: 4.4,
+        rating: 4.5,
+        tags:['vegetarian', 'gluten-free']
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,8 +158,18 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+let cbFunction = (foodArr) => {
+    for(let i = 0; i < 5; i++) {
+        if(foodArr.tags[i] === 'vegetarian') {
+            return true
+        }
+    }
+}
 
+const filteredFood = foodArr.filter(cbFunction)
+
+
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -149,6 +212,25 @@
 */
 
 //CODE HERE
+const filterByProperty = (property, number, type) => {
+    let filteredArray = foodArr.filter(callbackFunction)
+    return filteredArray
+}
+
+const callbackFunction = (property, number, type, foodArr) => {
+    for(let i = 0; i < 5; i++) {
+        if(type === 'above') {
+            if(foodArr.property[i] > number) {
+                return true
+            }
+        } else if(type === 'below') {
+            if(foodArr.property[i] < number) {
+                return true
+            }
+        }
+    return filteredArray
+    }
+}
 
 
 /*
@@ -159,3 +241,5 @@
 */
 
 //CODE HERE
+
+console.log(filterByProperty('price', 10, 'above'))
