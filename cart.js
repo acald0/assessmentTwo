@@ -35,8 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((a,c) => {
+    return a + c.price
+}, 0)
 
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,8 +57,12 @@ const cart = [
 */
 
 //CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    let finalNumber = (cartTotal * (1 + tax)) - couponValue
+    return finalNumber 
+}
 
-
+console.log(calcFinalPrice(24, 10, 0.05))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -80,6 +87,16 @@ const cart = [
 /*
     TEXT ANSWER HERE
 
+    My customer object will have four properties: Order Number, Order, Drinks, Paid: 
+
+        Order number: We need to know the customers order number so we can call out their number when their order is done. This property will be a number
+
+        Order: We need to know the order so we can properly prepare the cutomers order. This property will be an array so we can list multiple strings
+
+        Drinks: We need to know the number of drinks so we can give the customers their fountain drinks when they finish ordering. This property will be a number so we know how many drinks to hand them
+
+        Paid: We need to know if the customer has paid so we can start making their food. This property will be a boolean because it is true or false if a customer has paid
+
 */
 
 /*
@@ -88,3 +105,11 @@ const cart = [
 */
 
 //CODE HERE
+
+let inNoutOrder = {
+    orderNumber: 44,
+    order:['cheeseburger', 'fries', 'double double'],
+    drinks: 1,
+    paid: true
+}
+
